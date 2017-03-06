@@ -1,0 +1,42 @@
+#include <stdio.h>
+#include <conio.h>
+#include <stdlib.h>
+int f(int *);
+int g (int);
+int main(){
+
+
+int *p;// pointer tanımlama
+int a =10;
+p = &a;//pointera a nın yerini eslestirme
+
+
+printf("%d\n",p);//anın yerindeki degeri yazıyor
+
+
+*p =20;//pointerın gosterdigi yerdeki bosluga 20 degerini atıyor
+
+
+printf("%d\n",a);
+
+
+int *q = (int *)malloc(sizeof(int)*a);// a boyutunda bir pointer serisi tanımlıyor
+
+
+q[3] =70;//ayrılan yerin 3.süne 70 degerini atıyor  
+printf("%d\n",q[3]);
+f(&a);
+printf("%d\n",a);
+g(a);
+printf("%d\n",a);
+}
+	int g (int a){
+		a =90;// bu pointer olmadıgı icin a nın degerini degistirmiyor
+		
+	}
+int f(int * a){
+	*a = 80;//anın lokasyonundaki degeri degistirdigi icin degisim kalıcı
+	
+	
+	
+}
